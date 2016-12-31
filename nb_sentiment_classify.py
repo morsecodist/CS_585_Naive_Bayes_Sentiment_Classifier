@@ -233,9 +233,8 @@ class NaiveBayes:
         bow = self.feature_extractor(doc)
         self.update_model(bow, label)
 
-    """
-    Functions to get metrics about the corpus and model.
-    """
+    ##########################
+    # Functions to get metrics about the corpus and model.
 
     def top_n(self, label, n):
         """
@@ -320,6 +319,7 @@ class NaiveBayes:
         Returns the ratio of P(word|pos) to P(word|neg).
         """
         return self.p_word_given_label_and_psuedocount(word, POS_LABEL, alpha) / self.p_word_given_label_and_psuedocount(word, NEG_LABEL, alpha)
+    ##########################
 
     def evaluate_classifier_accuracy(self, alpha):
         """
